@@ -1,0 +1,12 @@
+<h1>List of Libraries (number of elements: {{ libraries?.length ?? 0 }})</h1>
+<a [routerLink]="['/libraries', 'add']">Add new library</a>
+<br />
+<ul>
+  @if (libraries) {
+    @for (library of libraries; track library.id) {
+      <li>
+        <a [routerLink]="['/libraries', library.id]">{{ library.name }}</a> (<a href="#" (click)="deleteLibrary(library.id)">Delete</a>)
+      </li>
+    }
+  }
+</ul>

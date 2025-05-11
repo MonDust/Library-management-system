@@ -1,0 +1,6 @@
+@if (library && book) {
+  <app-book-form [book]="book" [message]="message" (submit)="onSubmit()"></app-book-form>
+}
+@else {
+  <p>{{ message }}</p>
+}

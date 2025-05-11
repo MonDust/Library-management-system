@@ -1,0 +1,9 @@
+<form #form="ngForm" (ngSubmit)="onSubmit()">
+  <label for="name">Name <input type="text" id="name" name="name" [(ngModel)]="library.name" /></label>
+  <label for="address">Address <input type="text" id="address" name="address" [(ngModel)]="library.address" /></label>
+  <label for="city">City <input type="text" id="city" name="city" [(ngModel)]="library.city" /></label>
+  <button type="submit" [disabled]="!library.name">Submit</button>
+  @if (message) {
+    <p>{{message}}</p>
+  }
+</form>

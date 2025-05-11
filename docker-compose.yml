@@ -1,0 +1,69 @@
+version: "3.8"
+services:
+  library-manager:
+    build:
+      context: ./LibrariesManagement
+      dockerfile: Dockerfile
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://library-db:5432/${LIBRARIES_POSTGRES_DB}
+      - SPRING_DATASOURCE_USERNAME=${LIBRARIES_POSTGRES_USER}
+      - SPRING_DATASOURCE_PASSWORD=${LIBRARIES_POSTGRES_PASSWORD}
+    ports:
+      - "8081:8081"
+    depends_on:
+      - library-db
+
+  book-manager:
+    build:
+      context: ./BooksManagement
+      dockerfile: Dockerfile
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://book-db:5432/${BOOKS_POSTGRES_DB}
+      - SPRING_DATASOURCE_USERNAME=${BOOKS_POSTGRES_USER}
+      - SPRING_DATASOURCE_PASSWORD=${BOOKS_POSTGRES_PASSWORD}
+    ports:
+      - "8082:8082"
+    depends_on:
+      - book-db
+
+  gateway:
+    build:
+      context: ./LibrarySystemGateway
+      dockerfile: Dockerfile
+    environment:
+      - LIBRARY_MANAGEMENT_URL=${LIBRARY_MANAGEMENT_URL}
+      - BOOK_MANAGEMENT_URL=${BOOK_MANAGEMENT_URL}
+    ports:
+      - "8080:8080"
+    depends_on:
+      - library-manager
+      - book-manager
+
+  angular-app:
+    build:
+      context: ./NewJSProject
+      dockerfile: Dockerfile
+    ports:
+      - "4200:80"
+    environment:
+      - API_URL=http://gateway:8080
+    depends_on:
+      - gateway
+
+  library-db:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_DB=${LIBRARIES_POSTGRES_DB}
+      - POSTGRES_USER=${LIBRARIES_POSTGRES_USER}
+      - POSTGRES_PASSWORD=${LIBRARIES_POSTGRES_PASSWORD}
+    ports:
+      - "5433:5432"
+
+  book-db:
+    image: postgres:15-alpine
+    environment:
+      - POSTGRES_DB=${BOOKS_POSTGRES_DB}
+      - POSTGRES_USER=${BOOKS_POSTGRES_USER}
+      - POSTGRES_PASSWORD=${BOOKS_POSTGRES_PASSWORD}
+    ports:
+      - "5434:5432"

@@ -1,0 +1,8 @@
+<form #form="ngForm" (ngSubmit)="onSubmit()">
+  <label for="name">Name <input type="text" id="name" name="name" [(ngModel)]="book.name" /></label>
+  <label for="numberOfPages">Number of pages <input type="number" id="numberOfPages" name="numberOfPages" [(ngModel)]="book.numberOfPages" oninput="this.value = parseInt(this.value)" /></label>
+  <button type="submit" [disabled]="!book.name">Submit</button>
+  @if (message) {
+    <p>{{message}}</p>
+  }
+</form>

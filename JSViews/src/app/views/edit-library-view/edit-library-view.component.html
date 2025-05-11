@@ -1,0 +1,6 @@
+@if (library) {
+  <app-library-form [library]="library" [message]="message" (submit)="onSubmit()"></app-library-form>
+}
+@else {
+  <p>{{ message }}</p>
+}

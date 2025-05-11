@@ -1,0 +1,29 @@
+### Create a library
+POST http://localhost:8080/libraries/
+Content-Type: application/json
+
+{
+  "name": "gg",
+  "address": "gg",
+  "city": "gg"
+}
+
+### Get all libraries
+GET http://localhost:8080/libraries/
+
+### Get a library
+GET http://localhost:8080/libraries/215cd1ec-1ba4-4f6e-8d0c-17487819b5b0/
+
+### Update a library
+PUT http://localhost:8080/libraries/215cd1ec-1ba4-4f6e-8d0c-17487819b5b0/
+Content-Type: application/json
+
+{
+  "name" : "new updated library",
+  "address": "new address",
+  "city" : "new city"
+}
+
+### Delete a library
+DELETE http://localhost:8080/libraries/215cd1ec-1ba4-4f6e-8d0c-17487819b5b0/
+

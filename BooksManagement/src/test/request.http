@@ -1,0 +1,31 @@
+### Get all books
+GET http://localhost:8082/books/
+
+### Get book details
+GET http://localhost:8080/books/8b60f244-3a94-4a28-a8f8-89a534dabc77/
+Content-Type: application/json
+
+### Create a new book
+POST http://localhost:8080/libraries/215cd1ec-1ba4-4f6e-8d0c-17487819b5b0/books/
+Content-Type: application/json
+
+{
+  "name" : "NewBook2",
+  "numberOfPages" : 123
+}
+
+### Get books from a libraty
+GET http://localhost:8082/libraries/215cd1ec-1ba4-4f6e-8d0c-17487819b5b0/books/
+
+### Update book
+PUT http://localhost:8080/books/9e18c80d-1ebf-407b-b315-371b02313ac7/
+Content-Type: application/json
+
+{
+  "name" : "Another Book 3",
+  "numberOfPages": 3255
+}
+
+### Delete book
+DELETE http://localhost:8080/books/ca2b68cc-f889-4116-a6d6-3c7de696c64e/
+

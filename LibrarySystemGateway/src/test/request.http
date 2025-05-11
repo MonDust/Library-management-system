@@ -1,0 +1,59 @@
+### Create a library
+POST http://localhost:8080/libraries/
+Content-Type: application/json
+
+{
+  "name": "gg",
+  "address": "gg",
+  "city": "gg"
+}
+
+### Get all books
+GET http://localhost:8080/books/
+
+### Get book details
+GET http://localhost:8080/books/8b60f244-3a94-4a28-a8f8-89a534dabc77/
+Content-Type: application/json
+
+### Get books from a libraty
+GET http://localhost:8080/libraries/f7c1c395-f737-4fba-bac5-4690003811c0/books/
+
+### Update book
+PUT http://localhost:8080/books/9e18c80d-1ebf-407b-b315-371b02313ac7/
+Content-Type: application/json
+
+{
+  "name" : "Another Book 3",
+  "numberOfPages": 3255
+}
+
+### Delete book
+DELETE http://localhost:8080/books/c97d0bc7-bc16-48b0-8346-54466a53d6c7/
+
+### Get all libraries
+GET http://localhost:8080/libraries/
+
+### Get a library
+GET http://localhost:8080/libraries/215cd1ec-1ba4-4f6e-8d0c-17487819b5b0/
+
+### Update a library
+PUT http://localhost:8080/libraries/215cd1ec-1ba4-4f6e-8d0c-17487819b5b0/
+Content-Type: application/json
+
+{
+  "name" : "new updated library",
+  "address": "new address",
+  "city" : "new city"
+}
+
+### Delete a library
+DELETE http://localhost:8080/libraries/215cd1ec-1ba4-4f6e-8d0c-17487819b5b0/
+
+### Create a new book
+POST http://localhost:8080/libraries/f7c1c395-f737-4fba-bac5-4690003811c0/books/
+Content-Type: application/json
+
+{
+  "name" : "NewBook2",
+  "numberOfPages" : 123
+}

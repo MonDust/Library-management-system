@@ -1,0 +1,15 @@
+org\DTOclasses\SendLibraryDTO.class
+org\DTOclasses\UpdateLibraryDTO.class
+org\components\DataInitializerComponent.class
+org\DTOclasses\CreateLibraryDTO.class
+org\entities\Book$BookBuilder.class
+org\LibraryApplication.class
+org\entities\Library.class
+org\DTOclasses\ReadLibraryDTO.class
+org\controllers\LibraryController.class
+org\entities\Book.class
+org\DTOclasses\SendLibraryDTO$SendLibraryDTOBuilder.class
+org\entities\Library$LibraryBuilder.class
+org\repositories\LibrariesRepository.class
+org\services\LibrariesService.class
+org\services\LibrariesServiceImplementation.class

@@ -1,0 +1,20 @@
+@if (library) {
+  <article>
+    <a [routerLink]="['/libraries']">Back to Libraries</a>
+    <header>
+      <h1 [title]="library.id">{{ library.name }} (number of elements: {{ books?.length ?? 0 }}) (<a [routerLink]="['/libraries', library.id, 'edit']">Edit</a>)</h1>
+      <p>Id: {{ library.id }}</p>
+      <p>Address: {{ library.address }}</p>
+      <p>City: {{ library.city }}</p>
+    </header>
+  </article>
+  <a [routerLink]="['/libraries', library.id, 'books', 'add']">Add new book</a>
+  <ul>
+    @for (book of books; track book.id) {
+      <li>
+        <a [routerLink]="['/libraries', library.id, 'books', book.id]">{{ book.name }}</a> (<a (click)="deleteBook(book.id)">Delete</a>)
+      </li>
+    }
+  </ul>
+}
+<p>{{ message }}</p>

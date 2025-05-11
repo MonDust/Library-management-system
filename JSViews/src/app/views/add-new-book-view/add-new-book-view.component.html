@@ -1,0 +1,6 @@
+@if (library) {
+  <app-book-form [message]="message" (submit)="onSubmit($event)"></app-book-form>
+}
+@else {
+  <p>{{message}}</p>
+}
