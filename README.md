@@ -1,4 +1,4 @@
-# Library-management-system 📚 
+# Library-management-system 
 A microservices-based system for managing libraries and their books, developed as part of the Internet Services Architectures course. (RAR archive)
 
 ## Overview
