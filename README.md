@@ -8,16 +8,6 @@ A microservices-based system for managing libraries and their books, developed a
 - **Frontend Client** - Angular-based GUI for interacting with the system.
 - **Docker Compose**
 
-## Lab45-previousversion
-Rar with the pre-Docker containers suitable implementation. To run it, it is necessary to run:
-`
-npm install
-`
-To install all the needed modules (in "NewJSProject").
-
-## Lab6/general project in repository
-A Docker containers suitable implementation with external database (Docker, Docker Compose).
-
 ## Repository Structure
 
 | Path                          | Description                                                       |
