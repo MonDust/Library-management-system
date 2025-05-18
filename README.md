@@ -1,5 +1,5 @@
 # Library-management-system 
-A microservices-based system for managing libraries and their books, developed as part of the Internet Services Architectures course. (RAR archive)
+A microservices-based system for managing libraries and their books, developed as part of the Internet Services Architectures course.
 
 ## Overview
 - **Library Manager** — Microservice for managing library categories (Spring Boot).
@@ -20,7 +20,7 @@ A microservices-based system for managing libraries and their books, developed a
 | `NewJsProject/` or `JSViews/` | Angular application providing a web-based user interface.        |
 
   
-## Technologies Used 🛠️
+## Technologies Used
 - Java SE
 - Spring Boot (with Spring MVC and Spring Data)
 - PostgreSQL (external databases | Lab6)
@@ -31,7 +31,7 @@ A microservices-based system for managing libraries and their books, developed a
 - RESTful APIs
 - Project Lombok
 
-## How to Run 🚀
+## How to Run
 
 ### Pre-Docker Version (Lab 4–5)
 
